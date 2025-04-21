@@ -23,15 +23,15 @@ El sistema debe contar con un frontend en **React**, un backend en **FastAPI**, 
 
 ```json
 Client {
-  id: int,
+  id: uuid.UUID,
   name: str,
   email: str,
   created_at: datetime
 }
 
 Order {
-  id: int,
-  client_id: int,
+  id: uuid.UUID,
+  client_id: uuid.UUID,
   product: str,
   quantity: int,
   total_price: float,
@@ -76,11 +76,19 @@ Order {
 ### Requisitos:
 
 - Crear un esquema sencillo para `clients` y `orders` en PostgreSQL.
-- Conectar la API a la base de datos (usando SQLAlchemy o directamente con asyncpg, etc.)
+- Conectar la API a la base de datos (usando [SQLModel](https://sqlmodel.tiangolo.com))
 
 **Bonus (opcional):**
 
 - Archivo `docker-compose.yml` que levante la API y la base de datos.
+
+---
+## 💡 Consejos sobre el código
+
+1. Estructura del código: El código debe estar bien organizado y fácil de leer.
+2. Pensando en equipo: Prepara tu proyecto pensando que cualquier persona de tu equipo puede tener que trabajar en él en el futuro.
+3. Formatea tu código: Asegúrate de que tu código está formateado de forma consistente.
+4. Preparado para producción: Asegúrate de que tu aplicación está lista para producción. Minimiza el código, optimiza las imágenes, etc.
 
 ---
 
@@ -104,3 +112,13 @@ Order {
 - Dar acceso al usuario **`iku-solutions`** como colaborador para permitir la revisión.
 - Instrucciones claras para correr el proyecto (README).
 - Capturas o video corto si no logra conectar todo, explicando el flujo.
+
+---
+
+## 🚀 Entrevista
+
+Si pasas a la siguiente fase, te pediremos que hagas una entrevista con nosotros. Durante la entrevista, te pediremos que expliques tu código y que hagas algunos cambios en el mismo.
+
+* Nos tendrás que explicar el código que has escrito y las decisiones que has tomado.
+* Haremos cambios y tendrás que adaptar el código en vivo.
+* Añadiremos nuevos filtros a la aplicación y tendrás que implementarlo.
